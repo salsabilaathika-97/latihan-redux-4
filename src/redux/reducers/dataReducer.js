@@ -1,5 +1,5 @@
 const initialState = {
-    data: []
+    data: ['Hai']
 }
 
 const dataReducer = (state= initialState) => {
