@@ -1,5 +1,5 @@
 import axios from 'axios';
-import TYPES from "../redux/types";
+import TYPES from "../types";
 
 export const getData = () => (dispatch) => {
     axios

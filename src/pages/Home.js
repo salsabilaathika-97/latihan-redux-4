@@ -8,7 +8,7 @@ const Home = () => {
     const {data} = useSelector(state => state);
 
     useEffect(() => {
-        dispatch(getData);
+        dispatch(getData());
       }, []);
 
     return (
