@@ -6,7 +6,7 @@ import TYPES from "../redux/types";
 
 const Home = () => {
     const dispatch = useDispatch();
-    const data = useSelector(state => state);
+    const {data} = useSelector(state => state);
 
     useEffect(() => {
         getData();
@@ -18,7 +18,7 @@ const Home = () => {
           .then((res) => {
             dispatch({
                 type: TYPES.FETCH_DATA,
-                payload: res.data,
+                payload: res.data.data,
             })
           })
           .catch((err) => console.log(err));
@@ -29,6 +29,14 @@ const Home = () => {
     return (
         <div>
             <h1>Test</h1>
+            {
+                data.data.map(item => (
+                    <div>
+                        <h1>{item.first_name}</h1>
+                        <img src = {item.avatar} />
+                    </div>
+                ))
+            }
         </div>
     )
 }
